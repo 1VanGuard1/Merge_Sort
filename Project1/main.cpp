@@ -55,8 +55,20 @@ void merge_sort(std::vector<int>& arr, int left, int end) {
 
 
 int main() {
-    std::vector<int> arr = { 3, 9, 1, 4, 8, 2, 5, 7, 6 };
+    int n = 100;
+    srand(time(NULL));
+    std::vector<int> arr = std::vector<int>(n);
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = rand();
+    }
+    std::cout << "Unsorted array:\n";
+    for (int i : arr)
+    {
+        std::cout << i << " ";
+    }
     merge_sort(arr, 0, arr.size() - 1);
+    std::cout << "\nSorted array\n";
     for (int i : arr) {
         std::cout << i << " ";
     }
